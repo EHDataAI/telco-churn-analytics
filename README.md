@@ -4,6 +4,23 @@ A reproducible customer-churn case study rebuilt from an academic project into a
 Data Science portfolio artifact. The public data are fully synthetic and use a prediction-time
 contract to prevent outcome leakage.
 
+## Project status — Completed (19 October 2026)
+
+**Status:** Completed — public portfolio reconstruction and CI integration finalized.
+
+The project's planned reconstruction, synthetic-data generation, leakage-aware modeling,
+reproducible benchmark, documentation, and publication workflow have been completed.
+[Pull request #1](https://github.com/EHDataAI/telco-churn-analytics/pull/1) was merged
+into `main` on 19 October 2026 (merge commit `f7005f3`). Its three GitHub Actions
+checks — `quality`, `python-313-compatibility`, and `secret-scan` — passed.
+
+**Final selected model:** regularized logistic regression, selected using temporal
+validation PR-AUC (0.611); locked temporal test PR-AUC: 0.541. These results apply only
+to the synthetic benchmark and do not establish real-world telecom performance.
+
+No further development is planned for this completed portfolio case study. Future
+changes, if any, should be handled as separately reviewed maintenance updates.
+
 ## Problem
 
 Given customer information available at a monthly snapshot, estimate the probability of churn in
