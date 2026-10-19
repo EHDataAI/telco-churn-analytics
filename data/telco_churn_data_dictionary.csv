@@ -1,0 +1,35 @@
+column,dtype,role,description,baseline_model_use,methodological_note
+Customer ID,string,identifier,Synthetic unique customer identifier.,No,Identifier; never model directly.
+Snapshot Date,date,temporal,End-of-month date at which predictors are observed.,Split only,Used to enforce temporal evaluation.
+Age,integer,demographic,Customer age in years at snapshot.,Yes,Pre-outcome.
+Gender,category,demographic,Synthetic gender category.,Sensitivity,Consider fairness analysis; not essential to baseline.
+Married,binary,demographic,"1 if married, otherwise 0.",Sensitivity,Pre-outcome; optional fairness/sensitivity feature.
+Number of Dependents,integer,demographic,Number of dependents in household.,Yes,Pre-outcome.
+Number of Referrals,integer,relationship,Number of referrals made before snapshot.,Yes,Pre-outcome.
+Tenure in Months,integer,relationship,Months as a customer at snapshot.,Yes,Pre-outcome.
+Contract,category,commercial,Current contract type.,Yes,Pre-outcome.
+Payment Method,category,commercial,Current payment method.,Yes,Pre-outcome.
+Paperless Billing,binary,commercial,1 if paperless billing is enabled.,Yes,Do not count as a service in Service Count.
+Phone Service,binary,service,1 if phone service is active.,Yes,Pre-outcome.
+Multiple Lines,binary,service,1 if multiple phone lines are active.,Yes,Forced to 0 when Phone Service=0.
+Internet Service,binary,service,1 if internet service is active.,Yes,Pre-outcome.
+Internet Type,category,service,"DSL, Cable, Fiber Optic, or None.",Yes,Explicit None avoids ambiguous missingness.
+Online Security,binary,service,1 if online security is active.,Yes,Forced to 0 when Internet Service=0.
+Online Backup,binary,service,1 if online backup is active.,Yes,Forced to 0 when Internet Service=0.
+Device Protection Plan,binary,service,1 if device protection is active.,Yes,Forced to 0 when Internet Service=0.
+Premium Tech Support,binary,service,1 if premium technical support is active.,Yes,Forced to 0 when Internet Service=0.
+Streaming TV,binary,service,1 if streaming TV is active.,Yes,Forced to 0 when Internet Service=0.
+Streaming Movies,binary,service,1 if streaming movies is active.,Yes,Forced to 0 when Internet Service=0.
+Streaming Music,binary,service,1 if streaming music is active.,Yes,Forced to 0 when Internet Service=0.
+Unlimited Data,binary,service,1 if unlimited data is active.,Yes,Forced to 0 when Internet Service=0.
+Avg Monthly GB Download,integer,usage,Average monthly GB downloaded before snapshot.,Yes,0 when Internet Service=0.
+Avg Monthly Long Distance Charges,numeric,usage,Average monthly long-distance charge before snapshot.,Yes,0 when Phone Service=0.
+Offer,category,commercial,Current offer at snapshot.,Sensitivity,Analyze treatment/selection bias before causal interpretation.
+Preperiod Satisfaction Score,integer,survey,Satisfaction score 1-5 measured before the 30-day outcome window.,Yes,Timing is explicit to avoid the ambiguity of the source sample.
+Monthly Charge,numeric,financial,Current monthly total charge at snapshot.,Yes,Pre-outcome.
+Total Charges,numeric,financial_derived,Historical accumulated service charges to snapshot.,Optional,Highly related to tenure and monthly charge; test redundancy.
+Total Extra Data Charges,numeric,financial_derived,Historical extra-data charges to snapshot.,Optional,Derived historical aggregate.
+Total Long Distance Charges,numeric,financial_derived,Historical long-distance charges to snapshot.,Optional,Derived historical aggregate.
+Total Refunds,numeric,financial_derived,Historical refunds up to snapshot.,Optional,Sparse historical aggregate.
+Total Revenue,numeric,financial_derived,Historical revenue up to snapshot.,No baseline,Redundant with charge/tenure components; useful for EDA.
+Churn Next 30D,binary,target,1 if customer churns during the 30 days after snapshot.,Target,Outcome; never used as predictor.

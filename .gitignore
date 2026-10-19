@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+env/
+.conda/
+.env
+.env.*
+!.env.example
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Models and temporary outputs
+models/
+artifacts/
+.tmp/
+tmp/
+
+# Source academic/private material must stay out of the public repo
+original/
+private/
+source_data/
+Datos Telecomunicaciones-*.csv
+Entrega Final*.ipynb
+Entrega 03 de Diciembre*.ipynb
+*.mp4
+*.docx
+
+# Secrets
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.*
+credentials.*

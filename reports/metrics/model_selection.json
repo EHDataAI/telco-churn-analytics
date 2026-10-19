@@ -1,0 +1,27 @@
+{
+  "primary_validation_metric": "pr_auc",
+  "selected_model": "logistic_regression",
+  "threshold_selection": "maximum validation F1",
+  "validation_threshold": {
+    "threshold": 0.35463715131913354,
+    "f1": 0.5938650306743481,
+    "precision": 0.5627906976744186,
+    "recall": 0.6285714285714286
+  },
+  "test_protocol": "selected model only; accessed after model and threshold lock",
+  "test_metrics": {
+    "threshold": 0.35463715131913354,
+    "accuracy": 0.7395315826827538,
+    "precision": 0.5336538461538461,
+    "recall": 0.5620253164556962,
+    "f1": 0.5474722564734895,
+    "roc_auc": 0.76677652110953,
+    "pr_auc": 0.5411632247500818,
+    "brier_score": 0.16671631830238923,
+    "tn": 820,
+    "fp": 194,
+    "fn": 173,
+    "tp": 222,
+    "selected_model": "logistic_regression"
+  }
+}
