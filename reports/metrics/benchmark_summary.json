@@ -1,0 +1,35 @@
+{
+  "dataset_rows": {
+    "train": 4225,
+    "validation": 1409,
+    "test": 1409
+  },
+  "selected_model": "logistic_regression",
+  "validation_pr_auc": 0.6106761820339216,
+  "threshold": 0.35463715131913354,
+  "test_protocol": "selected model only; test scored after model and threshold lock",
+  "test_metrics": {
+    "threshold": 0.35463715131913354,
+    "accuracy": 0.7395315826827538,
+    "precision": 0.5336538461538461,
+    "recall": 0.5620253164556962,
+    "f1": 0.5474722564734895,
+    "roc_auc": 0.76677652110953,
+    "pr_auc": 0.5411632247500818,
+    "brier_score": 0.16671631830238923,
+    "tn": 820,
+    "fp": 194,
+    "fn": 173,
+    "tp": 222,
+    "selected_model": "logistic_regression"
+  },
+  "top_10_percent": {
+    "top_fraction": 0.1,
+    "customers_targeted": 141.0,
+    "churners_captured": 91.0,
+    "precision": 0.6453900709219859,
+    "recall": 0.23037974683544304,
+    "lift": 2.302163569440704
+  },
+  "interpretation": "Model metrics are evidence for this synthetic benchmark only; they are not estimates of production telecom performance."
+}

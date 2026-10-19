@@ -1,0 +1,7 @@
+# Cross-platform repository normalization
+# Text files, including synthetic CSV artifacts, are canonicalized to LF.
+# SHA-256 reproducibility therefore remains stable across operating systems.
+* text=auto eol=lf
+
+*.csv text eol=lf
+*.png -text
